@@ -44,9 +44,19 @@ class PalindromeTest(unittest.TestCase):
         assert response.data.decode("utf-8") == '{"error": false, "sentence entered": "", "answer": 0}'
 
 
-    # def test_palidrome_count_incorrect_parameters(self):
-    #     response = self.app.get('/')
-    #     assert response.data.decode("utf-8") == '{"error": true, "sentence entered": "500 Error: Incorrect Parameters Used", "answer": 0}'
+    def test_palidrome_count_incorrect_parameters_no_query(self):
+        response = self.app.get('/')
+        assert response.data.decode("utf-8") == '{"error": true, "sentence entered": "500 Error: Incorrect Parameters Used", "answer": 0}'
+
+
+    def test_palidrome_count_incorrect_parameters_no_equals_sign(self):
+        response = self.app.get('/?text')
+        assert response.data.decode("utf-8") == '{"error": false, "sentence entered": "", "answer": 0}'
+
+    def test_palidrome_count_incorrect_parameters_wrong(self):
+        response = self.app.get('/text=this is a test')
+        assert response.data.decode("utf-8") == '{"error": true, "sentence entered": "404 Error: Page Not Found", "answer": 0}'
+
 
 
 if __name__ == '__main__':
