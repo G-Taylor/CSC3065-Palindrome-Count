@@ -3,6 +3,7 @@ image: python:3.8-slim-buster
 stages:
   - build
   - test
+  - deploy
 
 build:
   stage: build
@@ -19,3 +20,9 @@ test:
     - pip install flask
     - python src/test.py
 
+deploy:
+  stage: deploy
+  script:
+    - docker login registry.hal.davecutting.uk -u $username -p $password
+    - docker build -t registry.hal.davecutting.uk/40234272/editor-palindrome .
+    - docker push registry.hal.davecutting.uk/40234272/editor-palindrome
