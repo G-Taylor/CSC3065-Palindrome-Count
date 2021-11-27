@@ -1,0 +1,11 @@
+image: python:3.8-slim-buster
+
+stages:
+  - build
+  - test
+
+test:
+  stage: test
+  script:
+    - python src/test.py
+
