@@ -16,8 +16,6 @@ build:
 test:
   stage: test
   script:
-    - virtualenv venv
-    - source venv/bin/activate
     - pip install flask
     - python src/test.py
 
