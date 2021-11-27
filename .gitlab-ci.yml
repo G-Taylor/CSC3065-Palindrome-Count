@@ -5,11 +5,12 @@ stages:
   - test
 
 build:
-  - python -V
-  - pip install virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
-  - pip install requirements
+  stage: build
+    - python -V
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+    - pip install requirements
 
 test:
   stage: test
