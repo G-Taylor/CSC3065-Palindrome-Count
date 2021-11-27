@@ -6,6 +6,7 @@ stages:
 
 build:
   stage: build
+  script:
     - python -V
     - pip install virtualenv
     - virtualenv venv
