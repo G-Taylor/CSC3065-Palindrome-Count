@@ -1,4 +1,3 @@
-from logging import error
 import flask
 import json
 from flask import Flask, request, Response
@@ -9,8 +8,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    sentence = ''
-    num_of_palindromes = 0
 
     sentence = request.args.get('text')
     num_of_palindromes = palindrome_count(sentence)
@@ -32,7 +29,7 @@ def home():
 @app.errorhandler(500)
 def server_error_500(error):
     error_output = {
-        "error": False,
+        "error": True,
         "sentence entered": "500 Error: Incorrect Parameters Used",
         "answer": 0    
     }
@@ -41,7 +38,6 @@ def server_error_500(error):
     response = flask.Response(json_output)
     response.headers['Content-Type'] = 'application/json'
     response.headers['Access-Control-Allow-Origin'] = '*'
-
     return response
 
 
