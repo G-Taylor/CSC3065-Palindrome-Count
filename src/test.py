@@ -44,9 +44,9 @@ class PalindromeTest(unittest.TestCase):
         assert response.data.decode("utf-8") == '{"error": false, "sentence entered": "", "answer": 0}'
 
 
-    def test_palidrome_count_incorrect_parameters(self):
-        response = self.app.get('/')
-        assert response.data.decode("utf-8") == '{"error": true, "sentence entered": "500 Error: Incorrect Parameters Used", "answer": 0}'
+    # def test_palidrome_count_incorrect_parameters(self):
+    #     response = self.app.get('/')
+    #     assert response.data.decode("utf-8") == '{"error": true, "sentence entered": "500 Error: Incorrect Parameters Used", "answer": 0}'
 
 
 if __name__ == '__main__':
