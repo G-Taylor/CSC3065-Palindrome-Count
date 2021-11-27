@@ -16,5 +16,6 @@ build:
 test:
   stage: test
   script:
+    - source venv/bin/activate
     - python src/test.py
 
