@@ -3,10 +3,9 @@ import re
 def palindrome_count(text_input):
 
     count = 0
-    sentence_list = []
+
     # take the text input change it all to lower case and then put each word in the sentence into a list based on whitespace
-    if text_input:
-        sentence_list = text_input.lower().split()
+    sentence_list = text_input.lower().split()
     # iterate through sentence list and compare each word greater than one letter with its reverse version
     # if its a match, increment the count
     for word in sentence_list:

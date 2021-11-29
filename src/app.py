@@ -18,7 +18,7 @@ def home():
 
     output = {
         "error": False,
-        "sentence entered": sentence,
+        "sentence": sentence,
         "answer": num_of_palindromes
     }
 
@@ -35,7 +35,7 @@ def home():
 def server_error_500(error):
     error_output = {
         "error": True,
-        "sentence entered": "500 Error: Incorrect Parameters Used",
+        "sentence": "500 Error: Incorrect Parameters Used",
         "answer": 0    
     }
 
@@ -51,7 +51,7 @@ def server_error_500(error):
 def server_error_404(error):
     error_output = {
         "error": True,
-        "sentence entered": "404 Error: Page Not Found",
+        "sentence": "404 Error: Page Not Found",
         "answer": 0    
     }
 
