@@ -11,7 +11,8 @@ def palindrome_count(text_input):
     for word in sentence_list:
         # remove all special characters and numbers using regex
         cleaned_word = re.sub('[^A-Za-z]+', '', word)
-        if cleaned_word == cleaned_word[::-1] and len(word) > 1:
-            count += 1
+        if cleaned_word is not '':
+            if cleaned_word == cleaned_word[::-1] and len(word) > 1:
+                count += 1
 
     return count
